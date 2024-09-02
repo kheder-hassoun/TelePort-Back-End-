@@ -1,0 +1,26 @@
+
+security:
+  jwt:
+    token:
+      secret-key: ${JWT_SECRET}
+
+server:
+  port: ${DATASOURCE_PORT:9090}
+  error:
+    include-stacktrace: never
+
+spring:
+  application:
+    name: authentication
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:mysql://localhost:3306/teleport_db}
+    username: ${DATASOURCE_USERNAME:root}
+    password: ${DATASOURCE_PASSWORD:kheder}
+    driver-class-name: ${DATASOURCE_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
